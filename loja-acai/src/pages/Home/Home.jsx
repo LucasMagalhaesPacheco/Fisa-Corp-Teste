@@ -3,6 +3,7 @@ import { useNavigate }  from "react-router-dom"
 
 import FlavorsSelect from "../../components/flavors";
 
+
 const Home = () => {
     const navigate = useNavigate();
 
@@ -13,6 +14,7 @@ const Home = () => {
 
             <h1>Bem-vindo a nossa loja de açai</h1>
             <FlavorsSelect />
+          
             
         </div>
 

@@ -1,18 +1,17 @@
-const sabores = ["Avelã", "Guaraná", "Morango", "Tradicional" ];
+const sabores = ["Avelã", "Guaraná", "Morango", "Tradicional"];
 
 const tamanhos = [
-    {name: "Pequeno", valor: "300ml", tempo: 10},
-    {name: "Medio", valor: "500ml", tempo: 15},
-    {name: "Grande", valor: "700ml", tempo: 20}
+    {id: 1, tamanho: "Pequeno", ml: "300ml", tempo: 10},
+    {id: 2, tamanho: "Medio", ml: "500ml", tempo: 15},
+    {id: 3, tamanho: "Grande", ml: "700ml", tempo: 20}
 ];
 
 const acompanhamento = [
-    {name: "Morango", valor: 3},
-    {name: "Banana", valor: 5},
-    {name: "Kiwi", valor: 4},
-    {name: "Granola", valor: 3},
-    {name: "Leite ninho", valor: 0.35}
-    
+    {id: 1, name: "Morango", tempo: 3},
+    {id: 2, name: "Banana", tempo: 5},
+    {id: 3, name: "Kiwi", tempo: 4},
+    {id: 4, name: "Granola", tempo: 3},
+    {id: 5, name: "Leite ninho", tempo: 0.35}
 ]; 
 
 export {sabores, tamanhos, acompanhamento};

@@ -1,21 +1,20 @@
 import React from "react";
 import {sabores } from '../constants/mock'
 
-
-
 const FlavorsSelect = () => {
-  return (
+
+ return(
     <div>
-        <label>Escolha sabor de açai:</label>
+        <label> Escolha o sabor do seu açaí: </label>
         <select>
-            {sabores.map((sabor, index) => (
-            <option key={index} value={sabor}>
+        {sabores.map((sabor, index) => {
+            <option value={sabor} key={index}>
                 {sabor}
             </option>
-            ))}
+        })}
         </select>
     </div>
-  )
+ )
 };
 
 export default FlavorsSelect
