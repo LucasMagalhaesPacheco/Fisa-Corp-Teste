@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import AcaiForm from '../../components/formAcai';
 
 
 const Cart = () => {
@@ -7,7 +8,7 @@ const Cart = () => {
 
     return (
         <div>
-            aaaaaaaaaaaaaaa;
+            <AcaiForm />
         </div>
     )
 }
