@@ -3,13 +3,15 @@ import { ProductCardContainer, ProductInfo, ProductTitle, TimeInfo } from "./pro
 
 
 
+
 const ProductCard = ({product}) => {
     return (
+        
         <ProductCardContainer>
             <ProductTitle>{product.sabor}</ProductTitle>
             <ProductInfo>Tamanho: {product.tamanho}</ProductInfo>
             <ProductInfo>Acompanhamento: {product.acompanhamentos.join(", ")}</ProductInfo>
-            <TimeInfo>Tempo de preparo: {product.preparo}</TimeInfo>
+            <TimeInfo>Tempo de preparo: {product.tempo}</TimeInfo>
         </ProductCardContainer>
     )
 } 

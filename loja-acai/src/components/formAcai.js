@@ -59,11 +59,12 @@ const AcaiForm = () => {
     }
 
     const addProduct = () => {
+         let totalTime = calculationTime().toFixed(2)
         const newProduct = {
             sabor: selectedFlavor,
             tamanho: selectedSize,
             acompanhamentos: selectedToppings,
-            time: calculationTime().toFixed(2)
+            tempo:totalTime
         }
 
         setSelectedProducts([...selectedProducts, newProduct])
@@ -112,6 +113,11 @@ const AcaiForm = () => {
 
 
     }
+
+    useEffect(() => {
+        // Atualiza o localStorage sempre que selectedProducts muda
+        localStorage.setItem("selectedProducts", JSON.stringify(selectedProducts));
+      }, [selectedProducts]);
 
 
     return (
