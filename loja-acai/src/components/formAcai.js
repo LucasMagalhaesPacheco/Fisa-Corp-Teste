@@ -1,13 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { sabores, tamanhos, acompanhamentos } from "../constants/mock";
 import Swal from "sweetalert2";
 import { ToppingOption, ToppingsContainer } from "./formAcaiStyle";
+import ProductCard from "./productcard";
 
 const AcaiForm = () => {
     const [selectedFlavor, setSelectedFlavor] = useState()
     const [selectedSize, setSelectedSize] = useState();
     const [selectedToppings, setSelectedToppings] = useState([])
-    const [selectedTime, setSelectedTime] = useState(0)
+    const [selectedProducts, setSelectedProducts] = useState([])
+
+
+
 
 
     const handleFlavorChange = (event) => {
@@ -16,7 +20,7 @@ const AcaiForm = () => {
 
     const handleSizeChange = (event) => {
         setSelectedSize(event.target.value);
-        console.log("HandleSizeChange:",  event.target.value)
+        console.log("HandleSizeChange:", event.target.value)
     }
 
     const handleToppingChange = (topping) => {
@@ -49,16 +53,31 @@ const AcaiForm = () => {
             console.log("SelectedToppings", preparationTime)
         })
 
-        setSelectedTime(preparationTime)
-        console.log("Selected Time", preparationTime)
+
 
         return preparationTime
     }
 
+    const addProduct = () => {
+        const newProduct = {
+            sabor: selectedFlavor,
+            tamanho: selectedSize,
+            acompanhamentos: selectedToppings,
+            time: calculationTime().toFixed(2)
+        }
+
+        setSelectedProducts([...selectedProducts, newProduct])
+    }
+
+
+    useEffect(() => {
+
+    }, [selectedProducts])
+
     const handleSubmit = () => {
-        console.log(calculationTime())
-        calculationTime();
-        if(!selectedFlavor || !selectedSize) {
+
+        let totalTime = calculationTime();
+        if (!selectedFlavor || !selectedSize) {
             Swal.fire({
                 icon: "warning",
                 title: "Campos obrigatórios",
@@ -66,24 +85,31 @@ const AcaiForm = () => {
                 confirmButtonText: "Ok"
             })
         } else {
-            
-        // Aqui organizo em texto o pedido do cliente.
-        const orderDetails = `
+            addProduct();
+            console.log("AddCart", selectedProducts)
+            // Aqui organizo em texto o pedido do cliente.
+            const orderDetails = `
         <strong>Sabor: <strong>${selectedFlavor}<br>
         <strong>Tamanho: <strong>${selectedSize}<br>
         <strong>Acompanhamentos: <strong>${selectedToppings.join(", ")}<br>
-        <strong>Tempo de preparo: </strong>${calculationTime().toFixed(2)} minutos.`
+        <strong>Tempo de preparo: </strong>${totalTime.toFixed(2)} minutos.`
 
-        Swal.fire({
-            icon: "sucess",
-            title: "Pedido confirmado!",
-            html: orderDetails,
-            showCloseButton: true,
-            showCancelButton: false,
-            focusConfirm: false,
-            confirmButtonText: "Delícia",
-        })
+            Swal.fire({
+                icon: "success",
+                title: "Pedido confirmado!",
+                html: orderDetails,
+                showCloseButton: true,
+                showCancelButton: false,
+                focusConfirm: false,
+                confirmButtonText: "Delícia",
+            })
         }
+
+        //Limpa os campos depois do botão.
+        setSelectedFlavor("")
+        setSelectedSize("")
+        setSelectedToppings([])
+
 
     }
 
@@ -126,6 +152,11 @@ const AcaiForm = () => {
                 </ToppingsContainer>
                 <button type="button" onClick={handleSubmit}>Finalizar Pedido!</button>
             </form>
+
+            <h3>Seus produtos: </h3>
+            {selectedProducts.map((product, index) => (
+                <ProductCard key={index} product={product} />
+            ))}
         </div>
 
     );
