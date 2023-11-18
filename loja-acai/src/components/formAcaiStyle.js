@@ -9,6 +9,7 @@ export const FormContainer = styled.div`
   justify-content: center;
   height: 100vh;
   padding: 20px;
+  
 
   form {
     background-color: rgba(255, 255, 255, 0.8);
@@ -37,9 +38,10 @@ export const ToppingsContainer = styled.div`
 `;
 
 export const ToppingOption = styled.div`
-  background-color: ${({ selected }) => (selected ? "green" : "lightgray")};
+  background-color: ${({ selected }) => (selected ? "purple" : "lightgray")};
   border-radius: 10px;
   margin: 5px;
   padding: 5px;
   cursor: pointer;
+  color: white;
 `;
