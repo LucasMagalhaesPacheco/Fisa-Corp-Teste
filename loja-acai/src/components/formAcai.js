@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { sabores, tamanhos, acompanhamentos } from "../constants/mock";
 import Swal from "sweetalert2";
-import { ToppingOption, ToppingsContainer } from "./formAcaiStyle";
 import ProductCard from "./productcard";
+import { FormContainer, ToppingsContainer, ToppingOption } from "./formAcaiStyle";
 
 const AcaiForm = () => {
     const [selectedFlavor, setSelectedFlavor] = useState()
@@ -121,10 +121,11 @@ const AcaiForm = () => {
 
 
     return (
-        <div>
-            <h3>Escolha estes sabores deliciosos:</h3>
+        <FormContainer>
+          
 
             <form>
+            <h3>Escolha estes sabores deliciosos:</h3>
                 <label>Sabores: </label>
                 <select value={selectedFlavor} onChange={handleFlavorChange} required>
                     <option>Selecione: </option>
@@ -163,7 +164,7 @@ const AcaiForm = () => {
             {selectedProducts.map((product, index) => (
                 <ProductCard key={index} product={product} />
             ))}
-        </div>
+        </FormContainer>
 
     );
 
