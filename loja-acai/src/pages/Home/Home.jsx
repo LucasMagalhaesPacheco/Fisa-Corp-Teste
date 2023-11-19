@@ -1,7 +1,6 @@
 import React from "react";
 import { useNavigate }  from "react-router-dom"
-
-
+import { Botao, Contraste, HomeContainer } from "./style";
 
 
 const Home = () => {
@@ -10,13 +9,14 @@ const Home = () => {
 
 
     return (
-        <div>
-
-            <h1>Bem-vindo a nossa loja de açai</h1>
-        
+        <HomeContainer>
+        <Contraste>
+          <h1>Bem-vindo à Loja de Açaí</h1>
           
-            
-        </div>
+            <Botao>Ver Produtos</Botao>
+          
+        </Contraste>
+      </HomeContainer>
 
     )
 }
