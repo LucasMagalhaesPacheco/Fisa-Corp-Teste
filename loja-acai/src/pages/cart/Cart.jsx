@@ -1,15 +1,15 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import AcaiForm from '../../components/formAcai';
+
+import AcaiForm from '../../components/formAcai/formAcai';
 
 
 const Cart = () => {
-    const navigate = useNavigate()
+    
 
     return (
-        <div>
+        
             <AcaiForm />
-        </div>
+        
     )
 }
 

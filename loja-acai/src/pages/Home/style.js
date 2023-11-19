@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-
+import HomeLogo from "../../assents/HomeLogo.jpg"
 
 export const HomeContainer = styled.div`
   display: flex;
@@ -8,11 +8,12 @@ export const HomeContainer = styled.div`
   text-align: center;
   padding: 50px;
   height: 100vh;
-  background-image: url('https://c1.wallpaperflare.com/preview/944/610/539/acai-acai-bowl-acai-brazil-healthy.jpg'); /* Substitua pelo URL da imagem desejada */
+  background-image: url(${HomeLogo});
   background-size: cover;
   background-position: center;
   color: #fff;
-`;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+`
 
 export const Contraste = styled.div`
   display: flex;
@@ -22,7 +23,7 @@ export const Contraste = styled.div`
   background: rgba(0, 0, 0, 0.5); 
   padding: 20px;
   border-radius: 10px;
-`;
+`
 
 export const Botao = styled.button`
   padding: 15px 30px;
@@ -38,4 +39,4 @@ export const Botao = styled.button`
   &:hover {
     background-color: #4a148c;
   }
-`;
+`
