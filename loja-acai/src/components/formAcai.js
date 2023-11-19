@@ -3,6 +3,7 @@ import { sabores, tamanhos, acompanhamentos } from "../constants/mock";
 import Swal from "sweetalert2";
 import ProductCard from "./productcard";
 import { FormContainer, ToppingsContainer, ToppingOption } from "./formAcaiStyle";
+import { CardContainer, ProductInfo, ProductTitle, TimeInfo } from "./productcardStyle";
 
 const AcaiForm = () => {
     const [selectedFlavor, setSelectedFlavor] = useState()
@@ -59,12 +60,12 @@ const AcaiForm = () => {
     }
 
     const addProduct = () => {
-         let totalTime = calculationTime().toFixed(2)
+        let totalTime = calculationTime().toFixed(2)
         const newProduct = {
             sabor: selectedFlavor,
             tamanho: selectedSize,
             acompanhamentos: selectedToppings,
-            tempo:totalTime
+            tempo: totalTime
         }
 
         setSelectedProducts([...selectedProducts, newProduct])
@@ -117,15 +118,15 @@ const AcaiForm = () => {
     useEffect(() => {
         // Atualiza o localStorage sempre que selectedProducts muda
         localStorage.setItem("selectedProducts", JSON.stringify(selectedProducts));
-      }, [selectedProducts]);
+    }, [selectedProducts]);
 
 
     return (
         <FormContainer>
-          
+
 
             <form>
-            <h3>Escolha estes sabores deliciosos:</h3>
+                <h3>Escolha estes sabores deliciosos:</h3>
                 <label>Sabores: </label>
                 <select value={selectedFlavor} onChange={handleFlavorChange} required>
                     <option>Selecione: </option>
@@ -162,7 +163,12 @@ const AcaiForm = () => {
 
             <h3>Seus produtos: </h3>
             {selectedProducts.map((product, index) => (
-                <ProductCard key={index} product={product} />
+                <CardContainer>
+                    <ProductTitle>{product.sabor}</ProductTitle>
+                    <ProductInfo>Tamanho: {product.tamanho}</ProductInfo>
+                    <ProductInfo>Acompanhamento: {product.acompanhamentos.join(", ")}</ProductInfo>
+                    <TimeInfo>Tempo de preparo: {product.tempo}</TimeInfo>
+                </CardContainer>
             ))}
         </FormContainer>
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const FormContainer = styled.div`
   background-image: url("https://e0.pxfuel.com/wallpapers/670/130/desktop-wallpaper-conheca-os-beneficios-do-acai-para-atletas-acai.jpg");
   background-size: cover;
+  background-position: center center; 
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,6 +28,7 @@ export const FormContainer = styled.div`
     select,
     button {
       margin-top: 10px;
+      
     }
   }
 `;

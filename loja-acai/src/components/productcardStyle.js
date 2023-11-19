@@ -4,8 +4,8 @@ export const CardContainer = styled.div`
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   padding: 20px;
-  width: 300px;
-  margin: 10px;
+  width: 18.75rem;
+  margin: 0.625rem;
   display: flex;
   flex-direction: column;
   align-items: center;
