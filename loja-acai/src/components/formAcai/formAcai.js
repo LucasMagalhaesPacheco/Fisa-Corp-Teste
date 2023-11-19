@@ -67,13 +67,16 @@ const AcaiForm = () => {
 
         setSelectedProducts([...selectedProducts, newProduct])
         
+        
     }
 
 
     const handleRemoveProduct = (productToRemove) => {
         const updatedProducts = selectedProducts.filter((product) => product !== productToRemove);
-        localStorage.setItem("selectedProducts", JSON.stringify(updatedProducts));
+        setSelectedProducts(updatedProducts)
+        
     };
+    
     const handleSubmit = () => {
 
         let totalTime = calculationTime();
@@ -113,11 +116,7 @@ const AcaiForm = () => {
 
     }
 
-    useEffect(() => {
-        
-        localStorage.setItem("selectedProducts", JSON.stringify(selectedProducts));
-    }, [selectedProducts]);
-
+  
 
     return (
         <FormContainer>
@@ -159,7 +158,9 @@ const AcaiForm = () => {
 
             <H3>Seus produtos: </H3>
             <ProductCardsContainer>
-                <ProductCard onRemove={handleRemoveProduct}/>
+            {selectedProducts.map((product, index) => (
+                <ProductCard key={index} product={product} onRemove={handleRemoveProduct} />
+            ))}
             </ProductCardsContainer>
         </FormContainer>
 
