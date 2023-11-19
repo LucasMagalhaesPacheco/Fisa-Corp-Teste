@@ -17,7 +17,7 @@ const AcaiForm = () => {
 
     const handleSizeChange = (event) => {
         setSelectedSize(event.target.value);
-        console.log("HandleSizeChange:", event.target.value)
+     
     }
 
     const handleToppingChange = (topping) => {
@@ -76,7 +76,7 @@ const AcaiForm = () => {
         setSelectedProducts(updatedProducts)
         
     };
-    
+
     const handleSubmit = () => {
 
         let totalTime = calculationTime();
