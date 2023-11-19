@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { sabores, tamanhos, acompanhamentos } from "../constants/mock";
 import Swal from "sweetalert2";
 import ProductCard from "./productcard";
-import { FormContainer, ToppingsContainer, ToppingOption } from "./formAcaiStyle";
-import { CardContainer, ProductInfo, ProductTitle, TimeInfo } from "./productcardStyle";
+import { FormContainer, ToppingsContainer, ToppingOption, ProductCardsContainer } from "./formAcaiStyle";
+
 
 const AcaiForm = () => {
     const [selectedFlavor, setSelectedFlavor] = useState()
@@ -162,9 +162,11 @@ const AcaiForm = () => {
             </form>
 
             <h3>Seus produtos: </h3>
+            <ProductCardsContainer>
             {selectedProducts.map((product, index) => (
               <ProductCard key={index} product={product} />
             ))}
+            </ProductCardsContainer>
         </FormContainer>
 
     );

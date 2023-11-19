@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const FormContainer = styled.div`
-  
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100vh;
   padding: 20px;
+  background-color: 	#DDA0DD;
+  overflow: auto;
   
 
   form {
@@ -26,16 +27,19 @@ export const FormContainer = styled.div`
     select,
     button {
       margin-top: 10px;
-      
+      width: 200px;
+      height: 25px;
+      font-size: 15px;
+      border-radius: 0.5rem;      
     }
   }
-`;
+`
 
 export const ToppingsContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-`;
+`
 
 export const ToppingOption = styled.div`
   background-color: ${({ selected }) => (selected ? "purple" : "lightgray")};
@@ -44,4 +48,17 @@ export const ToppingOption = styled.div`
   padding: 5px;
   cursor: pointer;
   color: white;
-`;
+`
+
+export const ProductCardsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-height: 300px; 
+  border: transparent;
+  overflow-y: auto; 
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #ccc; 
+  border-radius: 10px;
+`
