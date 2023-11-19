@@ -163,12 +163,7 @@ const AcaiForm = () => {
 
             <h3>Seus produtos: </h3>
             {selectedProducts.map((product, index) => (
-                <CardContainer>
-                    <ProductTitle>{product.sabor}</ProductTitle>
-                    <ProductInfo>Tamanho: {product.tamanho}</ProductInfo>
-                    <ProductInfo>Acompanhamento: {product.acompanhamentos.join(", ")}</ProductInfo>
-                    <TimeInfo>Tempo de preparo: {product.tempo}</TimeInfo>
-                </CardContainer>
+              <ProductCard key={index} product={product} />
             ))}
         </FormContainer>
 
