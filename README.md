@@ -66,3 +66,14 @@ Por fim existe um botão de tela com um modalzinho para apagar os produtos, um s
 -   Surge
 
 
+### 🧑‍💻 Desenvolvedores:
+
+</h2>
+<table align="center">
+  <tr>
+    </td> <td align="center"><a href="https://github.com/LucasMagalhaesPacheco"><img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/104689597?v=4" width="100px;" alt=""/><br /><sub><b>Lucas Magalhães Pacheco</b></sub></a>
+  </tr>
+</table>
+
+ [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lucas-magalhaes-pacheco/)
+
