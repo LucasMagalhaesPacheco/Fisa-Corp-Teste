@@ -47,4 +47,22 @@ fique pronto.
 # Descrição mais aprofundada
 Comecei o projeto criando o Mock com os produtos e fazendo um planejamento de quantas páginas seria necessário para melhor execução do projeto as desenhando em um caderno, tomei a decisão de fazer duas páginas e um Swall de alerta.
 A primeira seria uma Home, uma pagina simples com um botão no centro, aonde clicando nele iria envia-los para pagina de produtos. 
+Nesta pagina possui um formulário feito no components, este formulário tem como função o cadastro do pedido do cliente, seguindo as regras pré estabelecidas no teste.
+Para imprimir os produtos na tela, fiz um componente chamado ProductCard, para uma divisão maior de responsabilidades, recebendo por props o produto. 
+Por fim existe um botão de tela com um modalzinho para apagar os produtos, um swall para mostrar as notificações de feito o pedido ou um erro, caso falte informação.
+
+
+# Tecnologia utilizadas 
+
+-   React.JS
+-   SweetAlert2
+-   styled-components
+-   react-router-dom
+
+  ## Programas utilizados
+
+-   Git
+-   VSCode
+-   Surge
+
 
