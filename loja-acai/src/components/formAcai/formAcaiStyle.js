@@ -29,8 +29,7 @@ export const FormContainer = styled.div`
       margin-bottom: 5px;
     }
 
-    select,
-    button {
+    select, button {
       margin-top: 10px;
       width: 200px;
       height: 35px;
