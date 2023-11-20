@@ -12,10 +12,8 @@ const Home = () => {
     return (
         <HomeContainer>
         <Contraste>
-          <h1>Bem-vindo à o Açaí do bom!</h1>
-          
+          <h1>Bem-vindo ao Açaí do bom!</h1> 
             <Botao onClick={() => goToCart(navigate)}>Ver Produtos</Botao>
-          
         </Contraste>
       </HomeContainer>
 

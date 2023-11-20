@@ -9,7 +9,7 @@ export const Header = () => {
 
   return (
     <HeaderStyled>
-    <img src={Logo} alt="Logotipo Shopper" onClick={() => goToHome(navigate)}/>
+    <img src={Logo} alt="Logotipo Açaí" onClick={() => goToHome(navigate)}/>
     {
        window.location.pathname === "/" ?
        <button onClick={() => goToCart(navigate)}> Carrinho</button> :

@@ -9,7 +9,6 @@ export const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  
 `
 
 export const ProductTitle = styled.h4`
@@ -37,7 +36,7 @@ export const DeleteButton = styled.button`
     margin-top: 10px;
     font-size: 14px;
     border-radius: 5px;
-
+    
     &:hover {
         background-color: #e60000;
     }

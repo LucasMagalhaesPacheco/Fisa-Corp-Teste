@@ -12,7 +12,7 @@ const ProductCard = ({onRemove, product}) => {
                     <ProductTitle>{product.sabor}</ProductTitle>
                     <ProductInfo>Tamanho: {product.tamanho}</ProductInfo>
                     <ProductInfo>Acompanhamento: {product.acompanhamentos.join(", ")}</ProductInfo>
-                    <TimeInfo>Tempo de preparo: {product.tempo}</TimeInfo>
+                    <TimeInfo>Tempo de preparo: {product.tempo} minutos</TimeInfo>
                     <DeleteButton onClick={() => onRemove(product)}>Remover</DeleteButton>
                 </CardContainer>
     );
