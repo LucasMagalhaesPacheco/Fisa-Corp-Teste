@@ -33,10 +33,11 @@ export const FormContainer = styled.div`
     button {
       margin-top: 10px;
       width: 200px;
-      height: 25px;
+      height: 35px;
       font-size: 15px;
       border-radius: 0.5rem;      
     }
+    
   }
 `
 
