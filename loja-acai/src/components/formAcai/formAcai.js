@@ -5,6 +5,7 @@ import ProductCard from "../productCard/productcard";
 import { FormContainer, ToppingsContainer, ToppingOption, ProductCardsContainer, H3 } from "./formAcaiStyle";
 
 
+
 const AcaiForm = () => {
     const [selectedFlavor, setSelectedFlavor] = useState()
     const [selectedSize, setSelectedSize] = useState();
@@ -12,12 +13,11 @@ const AcaiForm = () => {
     const [selectedProducts, setSelectedProducts] = useState([])
 
     const handleFlavorChange = (event) => {
-        setSelectedFlavor(event.target.value);
+        setSelectedFlavor(event.target.value)
     }
 
     const handleSizeChange = (event) => {
-        setSelectedSize(event.target.value);
-
+        setSelectedSize(event.target.value)
     }
 
     const handleToppingChange = (topping) => {
@@ -39,7 +39,7 @@ const AcaiForm = () => {
         if (selectedSize !== "") {
             // Aqui é para encontrar dentro do array de tamanhos a variável tempo e depois nela adicionar o número
             const sizeData = tamanhos.find((size) => size.tamanho === selectedSize)
-            if(sizeData === undefined) {
+            if (sizeData === undefined) {
                 Swal.fire({
                     icon: "warning",
                     title: "Campos obrigatórios",
@@ -49,7 +49,7 @@ const AcaiForm = () => {
             } else {
                 preparationTime += sizeData.tempo
             }
-            
+
 
         }
 
@@ -57,7 +57,7 @@ const AcaiForm = () => {
         selectedToppings.forEach((topping) => {
 
             const toppingData = acompanhamentos.find((item) => item.nome === topping)
-            if(toppingData === undefined) {
+            if (toppingData === undefined) {
                 preparationTime += 0;
             } else {
                 preparationTime += toppingData.tempo
@@ -87,12 +87,11 @@ const AcaiForm = () => {
     const handleRemoveProduct = (productToRemove) => {
         const updatedProducts = selectedProducts.filter((product) => product !== productToRemove);
         setSelectedProducts(updatedProducts)
-
     };
 
     const handleSubmit = () => {
 
-        
+
         if (!selectedFlavor || !selectedSize) {
             Swal.fire({
                 icon: "warning",
@@ -102,15 +101,13 @@ const AcaiForm = () => {
             })
         } else {
             addProduct();
-        
         }
-        
+
         //Limpa os campos depois do botão.
         setSelectedFlavor("")
         setSelectedSize("")
         setSelectedToppings([])
     }
-
 
 
     return (
@@ -160,8 +157,6 @@ const AcaiForm = () => {
         </FormContainer>
 
     );
-
-
 }
 
 export default AcaiForm
